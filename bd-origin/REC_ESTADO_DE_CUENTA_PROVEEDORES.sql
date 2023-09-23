@@ -1,0 +1,51 @@
+--------------------------------------------------------
+--  DDL for Type REC_ESTADO_DE_CUENTA_PROVEEDORES
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TYPE "USR_TSI_SUITE"."REC_ESTADO_DE_CUENTA_PROVEEDORES" AS OBJECT (
+    tipo        INTEGER,
+    docu        INTEGER,
+    tipdoc      VARCHAR2(3),
+    abrevi      VARCHAR2(6),
+    desdoc      VARCHAR2(50 CHAR),
+    docume      VARCHAR2(40),
+    refere01    VARCHAR2(25 CHAR),
+    refere02    VARCHAR2(25 CHAR),
+    femisi      DATE,
+    fvenci      DATE,
+    fcance      DATE,
+    mora        NUMBER,
+    tipmon      VARCHAR2(5),
+    debe        NUMERIC(16, 2),
+    haber       NUMERIC(16, 2),
+    dh          VARCHAR2(1),
+    tdocumento  NUMERIC(16, 2),
+    saldo       NUMERIC(16, 2),
+    planilla    VARCHAR2(20),
+    descri      VARCHAR2(50),
+    libro       VARCHAR2(3),
+    periodo     INTEGER,
+    mes         INTEGER,
+    secuencia   INTEGER,
+    planiletra  VARCHAR2(40),
+    codban      INTEGER,
+    desban      VARCHAR2(70),
+    numbco      VARCHAR2(50),
+    tipcan      INTEGER,
+    dtipcan     VARCHAR2(60),
+    operac      INTEGER,
+    protes      INTEGER,
+    tipcam      NUMERIC(14, 6),
+    signo       INTEGER,
+    ddetrac     VARCHAR2(15),
+    fdetrac     DATE,
+    impdetrac   NUMERIC(16, 4),
+    tippla      INTEGER,
+    codclir     VARCHAR2(25),
+    desclir     VARCHAR2(100),
+    fvenci2     DATE,
+    amorti      NUMERIC(16, 2),
+    saldocalc   NUMERIC(16, 2)
+);
+
+/

@@ -1,0 +1,19 @@
+--------------------------------------------------------
+--  DDL for Trigger DESPUES_ELIMINAR_DCTA100
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER "USR_TSI_SUITE"."DESPUES_ELIMINAR_DCTA100" AFTER
+    DELETE ON "USR_TSI_SUITE".dcta100
+    FOR EACH ROW
+BEGIN
+  /*2015-06-19 ESTA TABLA GUARDAR ESTOS DATOS QUE SERVIRAN COMO RESPALDO
+  PARA DATA QUE PASO POR MIGRACION Y LOS QUE NACEN CON ALGUNOS DATOS ADICIONALES*/
+    DELETE FROM dcta100_ori
+    WHERE
+            id_cia = :old.id_cia
+        AND numint = :old.numint;
+
+END;
+
+/
+ALTER TRIGGER "USR_TSI_SUITE"."DESPUES_ELIMINAR_DCTA100" ENABLE;

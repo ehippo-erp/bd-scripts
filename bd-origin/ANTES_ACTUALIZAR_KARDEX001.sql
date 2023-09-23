@@ -1,0 +1,17 @@
+--------------------------------------------------------
+--  DDL for Trigger ANTES_ACTUALIZAR_KARDEX001
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER "USR_TSI_SUITE"."ANTES_ACTUALIZAR_KARDEX001" BEFORE
+    UPDATE ON kardex001
+    FOR EACH ROW
+
+BEGIN
+
+  IF ((:NEW.INGRESO>:NEW.CANTID_ORI) AND  (:NEW.SALIDA=0)) THEN
+    :NEW.CANTID_ORI := :NEW.INGRESO;
+  end if;
+
+END;
+/
+ALTER TRIGGER "USR_TSI_SUITE"."ANTES_ACTUALIZAR_KARDEX001" ENABLE;
